@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :post_images, only: [:new,:create, :index, :show, :destroy]
   
   devise_for :users
+  resources :users, only: [:show, :edit]
+  
   
   get root to: 'homes#top'
   get 'homes/about', as: 'about'
